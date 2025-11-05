@@ -2,11 +2,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Mapbox.Unity.Map;
 using Mapbox.Utils;
+using Unity.VisualScripting;
 
 public class MapLatLonMovement : MonoBehaviour
 {
     [Header("Mapbox References")]
-    [SerializeField] private AbstractMap _map;
+    [SerializeField] public AbstractMap _map;
     [SerializeField] private LocationModeSwitcher locationSwitcher;
 
     [Header("Movement Settings")]
@@ -15,21 +16,11 @@ public class MapLatLonMovement : MonoBehaviour
     [SerializeField] private float minZoom = 10f;
     [SerializeField] private float maxZoom = 18f;
 
+    public Vector2d currentCenter => _map.CenterLatitudeLongitude;
+
     private Vector2 lastTouchPos;
     private bool isDragging = false;
     private float lastPinchDist;
-
-    private void Awake()
-    {
-        if (_map == null)
-        {
-            _map = FindFirstObjectByType<AbstractMap>();
-            if (_map == null)
-            {
-                Debug.LogError("[MapLatLonMovement] No se encontró un mapa en la escena.");
-            }
-        }
-    }
 
     private void Update()
     {
@@ -42,16 +33,11 @@ public class MapLatLonMovement : MonoBehaviour
 
     private void HandleMouse()
     {
-        // Arrastre
-         if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            if (!EventSystem.current.IsPointerOverGameObject())
-            {
-                isDragging = true;
-                lastTouchPos = Input.mousePosition;
-                // Desactiva seguimiento en cuanto el usuario empiece a arrastrar
-                if (locationSwitcher != null) locationSwitcher.SetFollowLocation(false);
-            }
+            isDragging = true;
+            lastTouchPos = Input.mousePosition;
+            locationSwitcher?.SetFollowLocation(false);
         }
         else if (Input.GetMouseButtonUp(0))
         {
@@ -65,12 +51,12 @@ public class MapLatLonMovement : MonoBehaviour
             lastTouchPos = Input.mousePosition;
         }
 
-        // Zoom con scroll
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (Mathf.Abs(scroll) > 0.01f)
-        {
             ZoomMap(scroll * zoomSpeed * 2f);
-        }
+
+        Debug.Log($"Scroll: {scroll}, Zoom actual: {_map.Zoom}");
+
     }
 
     private void HandleTouch()
@@ -122,32 +108,36 @@ public class MapLatLonMovement : MonoBehaviour
         }
     }
 
+
     private void MoveMap(Vector2 delta)
     {
-        if (_map == null) return;
-
         Vector2d center = _map.CenterLatitudeLongitude;
 
-        // Convertimos el movimiento de pantalla a grados
         float latDegPerPixel = dragSpeed * Mathf.Pow(2, 14 - _map.Zoom);
         float lonDegPerPixel = latDegPerPixel / Mathf.Cos((float)(center.x * Mathf.Deg2Rad));
 
-        // Movimiento invertido (como en Google Maps)
-        center.x += delta.y * latDegPerPixel * -1; // norte/sur
-        center.y += delta.x * lonDegPerPixel;      // este/oeste
+        center.x += delta.y * latDegPerPixel * -1;
+        center.y += delta.x * lonDegPerPixel;
 
         _map.UpdateMap(center, _map.Zoom);
+        Debug.Log($"🧭 Nueva posición: {center}");
     }
 
     private void ZoomMap(float deltaZoom)
     {
-        if (_map == null) return;
-
         float newZoom = Mathf.Clamp(_map.Zoom + deltaZoom, minZoom, maxZoom);
         _map.UpdateMap(_map.CenterLatitudeLongitude, newZoom);
+
     }
-        public void OnFollowButtonPressed()
+    public Vector2d ScreenToLatLon(Vector3 screenPos)
     {
-        locationSwitcher.SetFollowLocation(true);
+        Ray ray = Camera.main.ScreenPointToRay(screenPos);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            // Si tu mapa tiene collider
+            // Convierte posición del mundo a lat/lon según tu SDK
+            return _map.WorldToGeoPosition(hit.point);
+        }
+        return default(Vector2d);
     }
 }
