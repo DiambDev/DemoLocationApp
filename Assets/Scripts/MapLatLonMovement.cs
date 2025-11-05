@@ -120,7 +120,7 @@ public class MapLatLonMovement : MonoBehaviour
         center.y += delta.x * lonDegPerPixel;
 
         _map.UpdateMap(center, _map.Zoom);
-        Debug.Log($"🧭 Nueva posición: {center}");
+        //Debug.Log($"🧭 Nueva posición: {center}");
     }
 
     private void ZoomMap(float deltaZoom)
