@@ -1,0 +1,16 @@
+.settings-section {
+    width: 100%;
+    background-color: white;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border-width: 1px;
+    border-color: #ddd;
+    flex-direction: column;
+}
+
+.section-title {
+    font-size: 20px;
+    -unity-font-style: bold;
+    margin-bottom: 6px;
+}

@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="root">
+
+        <!-- HEADER -->
+        <ui:VisualElement name="header" class="header">
+            <ui:Label name="title" class="header-title" text="TITULO" />
+        </ui:VisualElement>
+
+        <!-- CONTENT -->
+        <ui:ScrollView name="content" class="content-area">
+        </ui:ScrollView>
+
+    </ui:VisualElement>
+</ui:UXML>

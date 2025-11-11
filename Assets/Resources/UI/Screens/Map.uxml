@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/MainMenu/MainMenu.uss?fileID=7433441132597879392&amp;guid=d6219086047e6874c837dbaca878a8a6&amp;type=3#MainMenu" />
+    <Style src="project://database/Assets/MainMenu//Map.uss?fileID=7433441132597879392&amp;guid=d6219086047e6874c837dbaca878a8a6&amp;type=3#MainMenu" />
 
     <ui:VisualElement name="root">
 
@@ -56,7 +56,7 @@
             <!-- BOTTOM BAR -->
             <ui:VisualElement name="bottom-bar">
 
-                <ui:Button name="navMapa">
+                  <!-- <ui:Button name="navMapa">
                     <ui:VisualElement class="scroller">
                         <ui:Label name="lblMapa" text="Mapa" class="btn-text" />
                     </ui:VisualElement>
@@ -78,7 +78,7 @@
                     <ui:VisualElement class="scroller">
                         <ui:Label name="lblSettings" text="Settings" class="btn-text" />
                     </ui:VisualElement>
-                </ui:Button>
+                </ui:Button>-->
 
             </ui:VisualElement>
 

@@ -1,0 +1,87 @@
+#root {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Fondo suave estilo app móvil */
+}
+#bottom-area {
+    height: 10%;
+    width: 100%;
+    flex-direction: column;
+     position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#bottom-bar {
+    flex-grow: 1;
+    flex-direction: row;
+    background-color: #fafafa;
+    flex-basis: 0;
+}
+
+#bottom-bar > Button {
+    flex-grow: 1;
+    flex-basis: 0;
+    margin: 0;
+    padding: 6;
+    background-color: transparent;
+    border-width: 0;
+
+    color: #333;
+    font-size: 18px;
+}
+
+#bottom-bar > Button:hover {
+    background-color: #e8f0fe;
+}
+
+#bottom-bar > Button:active {
+    background-color: #d2e3fc;
+}
+
+#bottom-bar > Button:hover {
+    background-color: #e8f0fe;
+}
+
+#bottom-bar > Button:active {
+    background-color: #d2e3fc;
+}
+.scroller {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* texto dentro de botones */
+.btn-text {
+    white-space: nowrap;
+    left: 0;
+    top: 0%;
+    color: black;
+    -unity-font-style: bold;
+    font-size: 18px;
+
+    letter-spacing: 0.3px;
+}
+
+/* Emergencia — botón rojo */
+#lblEmergencia {
+    font-size: 20px;
+    color: white;
+    -unity-font-style: bold;
+}
+
+#btnEmergencia {
+    background-color: #d93025 !important;
+    border-radius: 12px;
+}
+
+#btnEmergencia:hover {
+    background-color: #c5221f !important;
+}
+
+#btnEmergencia:active {
+    background-color: #b31412 !important;
+}

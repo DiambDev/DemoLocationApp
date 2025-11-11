@@ -1,0 +1,44 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/MainMenu/Styles/Root.uss" />
+    <Style src="project://database/Assets/MainMenu/Styles/Contactos.uss" />
+
+    <ui:VisualElement name="root">
+
+        <ui:VisualElement name="header" class="header">
+            <ui:Label name="title" class="header-title" text="Llamadas" />
+        </ui:VisualElement>
+
+        <ui:ScrollView name="content" class="content-area">
+
+            <ui:VisualElement name="contact-list" class="contact-list">
+
+                <!-- CONTACTO: Policía -->
+                <ui:VisualElement class="contact-item">
+                    <ui:Image class="contact-icon" />
+                    <ui:Label class="contact-name" text="Policía" />
+                    <ui:Label class="contact-number" text="105" />
+                    <ui:Label class="contact-count" text="0 llamadas" />
+                </ui:VisualElement>
+
+                <!-- CONTACTO: Bomberos -->
+                <ui:VisualElement class="contact-item">
+                    <ui:Image class="contact-icon" />
+                    <ui:Label class="contact-name" text="Bomberos" />
+                    <ui:Label class="contact-number" text="116" />
+                    <ui:Label class="contact-count" text="0 llamadas" />
+                </ui:VisualElement>
+
+                <!-- CONTACTO: Ambulancia -->
+                <ui:VisualElement class="contact-item">
+                    <ui:Image class="contact-icon" />
+                    <ui:Label class="contact-name" text="Ambulancia" />
+                    <ui:Label class="contact-number" text="106" />
+                    <ui:Label class="contact-count" text="0 llamadas" />
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+
+        </ui:ScrollView>
+
+    </ui:VisualElement>
+</ui:UXML>

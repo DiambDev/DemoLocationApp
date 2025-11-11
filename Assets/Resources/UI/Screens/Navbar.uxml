@@ -1,0 +1,29 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/MainMenu/Styles/Navbar.uss?fileID=7433441132597879392&amp;guid=749cc4360092af34aa3e703ab59e2c95&amp;type=3#Navbar" />
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="bottom-area">
+            <ui:VisualElement name="bottom-bar">
+                <ui:Button name="navMapa">
+                    <ui:VisualElement class="scroller">
+                        <ui:Label name="lblMapa" text="Mapa" class="btn-text" />
+                    </ui:VisualElement>
+                </ui:Button>
+                <ui:Button name="navContactos">
+                    <ui:VisualElement class="scroller">
+                        <ui:Label name="lblContactos" text="Contactos" class="btn-text" />
+                    </ui:VisualElement>
+                </ui:Button>
+                <ui:Button name="navRegistro">
+                    <ui:VisualElement class="scroller">
+                        <ui:Label name="lblRegistro" text="Registro" class="btn-text" />
+                    </ui:VisualElement>
+                </ui:Button>
+                <ui:Button name="navSettings">
+                    <ui:VisualElement class="scroller">
+                        <ui:Label name="lblSettings" text="Settings" class="btn-text" />
+                    </ui:VisualElement>
+                </ui:Button>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

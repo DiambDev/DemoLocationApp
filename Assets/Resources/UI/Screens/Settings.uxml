@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/MainMenu/Styles/Root.uss" />
+    <Style src="project://database/Assets/MainMenu/Styles/Settings.uss" />
+
+    <ui:VisualElement name="root">
+
+        <ui:VisualElement name="header" class="header">
+            <ui:Label name="title" class="header-title" text="Settings" />
+        </ui:VisualElement>
+
+        <ui:ScrollView name="content" class="content-area">
+
+            <ui:VisualElement name="settings-list" class="settings-list">
+
+                <ui:TextField label="Nombre de usuario" class="settings-field" />
+                <ui:TextField label="Número de celular" class="settings-field" />
+                <ui:TextField label="Ubicación por defecto" class="settings-field" />
+                <ui:TextField label="Lenguaje" class="settings-field" />
+                <ui:Toggle text="Ruido" class="settings-toggle" />
+
+            </ui:VisualElement>
+
+        </ui:ScrollView>
+
+    </ui:VisualElement>
+</ui:UXML>

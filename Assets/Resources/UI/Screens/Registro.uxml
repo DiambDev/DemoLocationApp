@@ -1,0 +1,30 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/MainMenu/Styles/Root.uss" />
+    <Style src="project://database/Assets/MainMenu/Styles/Registro.uss" />
+
+    <ui:VisualElement name="root">
+
+        <ui:VisualElement name="header" class="header">
+            <ui:Label name="title" class="header-title" text="Reportes" />
+        </ui:VisualElement>
+
+        <ui:ScrollView name="content" class="content-area">
+
+            <ui:VisualElement name="grid" class="grid-container">
+
+                <!-- 8 botones por defecto -->
+                <ui:Button class="report-btn" text="Reporte 1" />
+                <ui:Button class="report-btn" text="Reporte 2" />
+                <ui:Button class="report-btn" text="Reporte 3" />
+                <ui:Button class="report-btn" text="Reporte 4" />
+                <ui:Button class="report-btn" text="Reporte 5" />
+                <ui:Button class="report-btn" text="Reporte 6" />
+                <ui:Button class="report-btn" text="Reporte 7" />
+                <ui:Button class="report-btn" text="Reporte 8" />
+
+            </ui:VisualElement>
+
+        </ui:ScrollView>
+
+    </ui:VisualElement>
+</ui:UXML>
