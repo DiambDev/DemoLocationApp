@@ -1,0 +1,213 @@
+/* ROOT */
+#root {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Fondo suave estilo app móvil */
+}
+
+/* TOP BAR */
+#top-bar {
+    height: 15%;
+    background-color: #1a73e8;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.3); /* Sombra suave */
+}
+
+#title {
+    font-size: 26px;
+    color: white;
+    -unity-font-style: bold;
+    letter-spacing: 0.5px;
+}
+
+/* MAP AREA */
+#map-area {
+    height: 60%;
+    background-color: transparent;
+    position: relative;
+}
+
+/* ZOOM BUTTONS → estilo flotante */
+/* ZOOM BUTTONS → esquina superior derecha dentro de #map-area, uno encima del otro */
+#btnZoomPlus {
+    width: 50px;
+    height: 50px;
+    scale: 1.0;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border-width: 0px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+
+    position: absolute;
+    top: 10px;       /* botón + arriba */
+    right: 10px;
+}
+
+#btnZoomMinus {
+    width: 50px;
+    height: 50px;
+    scale: 1.0;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border-width: 0px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+
+    position: absolute;
+    top: 70px;       /* se separa debajo del + (50px de altura + 10px de separación) */
+    right: 10px;
+}
+
+
+#btnZoomPlus:hover,
+#btnZoomMinus:hover {
+    background-color: #e8f0fe;
+}
+
+#btnZoomPlus:active,
+#btnZoomMinus:active {
+    background-color: #d2e3fc;
+}
+
+@media (max-width: 800px) {
+    #btnZoomPlus,
+    #btnZoomMinus {
+        scale: 0.8;
+    }
+}
+
+/* DYNAMIC BUTTON */
+#btnDynamic {
+    width: 140px;
+    height: 45px;
+    border-radius: 12px;
+
+    background-color: rgba(255,255,255,0.9);
+    border-width: 0;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
+     position: absolute;
+    top: 10px;       /* desde la parte superior del contenedor */
+    left: 10px;      /* desde la izquierda del contenedor */
+}
+
+#btnDynamic:hover {
+    background-color: #f1f3f4;
+}
+
+@media (max-width: 800px) {
+    #btnDynamic {
+        scale: 0.8;
+    }
+}
+
+/* BOTTOM AREA */
+#bottom-area {
+    height: 25%;
+    width: 100%;
+    flex-direction: column;
+}
+
+/* ACTION AREA — botones grandes */
+#action-area {
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 6px;
+    background-color: #ffffff;
+    flex-basis: 0;
+}
+
+#action-area > Button {
+    flex-grow: 1;
+    flex-basis: 0;
+    margin: 4px;
+
+    background-color: #1a73e8;
+    border-radius: 12px;
+    border-width: 0;
+
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
+}
+
+#action-area > Button:hover {
+    background-color: #1664c4;
+}
+
+#action-area > Button:active {
+    background-color: #0f56a9;
+}
+
+/* BOTTOM BAR — navegación */
+#bottom-bar {
+    flex-grow: 1;
+    flex-direction: row;
+    background-color: #fafafa;
+    flex-basis: 0;
+   
+
+}
+
+#bottom-bar > Button {
+    flex-grow: 1;
+    flex-basis: 0;
+    margin: 0;
+    padding: 6;
+    background-color: transparent;
+    border-width: 0;
+
+    color: #333;
+    font-size: 18px;
+}
+
+#bottom-bar > Button:hover {
+    background-color: #e8f0fe;
+}
+
+#bottom-bar > Button:active {
+    background-color: #d2e3fc;
+}
+
+/* ===================== */
+/* SCROLLER + LABEL POS  */
+/* ===================== */
+
+.scroller {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* texto dentro de botones */
+.btn-text {
+    white-space: nowrap;
+    left: 0;
+    top: 0%;
+    color: black;
+    -unity-font-style: bold;
+    font-size: 18px;
+
+    letter-spacing: 0.3px;
+}
+
+/* Emergencia — botón rojo */
+#lblEmergencia {
+    font-size: 20px;
+    color: white;
+    -unity-font-style: bold;
+}
+
+#btnEmergencia {
+    background-color: #d93025 !important;
+    border-radius: 12px;
+}
+
+#btnEmergencia:hover {
+    background-color: #c5221f !important;
+}
+
+#btnEmergencia:active {
+    background-color: #b31412 !important;
+}

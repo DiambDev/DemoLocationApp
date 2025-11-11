@@ -1,0 +1,88 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/MainMenu/MainMenu.uss?fileID=7433441132597879392&amp;guid=d6219086047e6874c837dbaca878a8a6&amp;type=3#MainMenu" />
+
+    <ui:VisualElement name="root">
+
+        <!-- TOP BAR -->
+        <ui:VisualElement name="top-bar">
+            <ui:Label name="title" text="Seguridad SJL" />
+        </ui:VisualElement>
+
+        <!-- MAP AREA -->
+        <ui:VisualElement name="map-area">
+
+            <ui:VisualElement name="zoom-buttons">
+                <ui:Button name="btnZoomPlus">
+                    <ui:VisualElement class="scroller">
+                        <ui:Label name="lblZoomPlus" text="+" class="btn-text" />
+                    </ui:VisualElement>
+                </ui:Button>
+
+                <ui:Button name="btnZoomMinus">
+                    <ui:VisualElement class="scroller">
+                        <ui:Label name="lblZoomMinus" text="-" class="btn-text" />
+                    </ui:VisualElement>
+                </ui:Button>
+            </ui:VisualElement>
+
+            <ui:Button name="btnDynamic">
+                <ui:VisualElement class="scroller">
+                    <ui:Label name="lblDynamic" text="Ubicación" class="btn-text" />
+                </ui:VisualElement>
+            </ui:Button>
+
+        </ui:VisualElement>
+
+        <!-- BOTTOM AREA -->
+        <ui:VisualElement name="bottom-area">
+
+            <!-- ACTION AREA -->
+            <ui:VisualElement name="action-area">
+
+                <ui:Button name="btnEmergencia">
+                    <ui:VisualElement class="scroller">
+                        <ui:Label name="lblEmergencia" text="Llamada Emergencia" class="btn-text" />
+                    </ui:VisualElement>
+                </ui:Button>
+
+                <ui:Button name="btnRuta">
+                    <ui:VisualElement class="scroller">
+                        <ui:Label name="lblRuta" text="Ruta" class="btn-text" />
+                    </ui:VisualElement>
+                </ui:Button>
+
+            </ui:VisualElement>
+
+            <!-- BOTTOM BAR -->
+            <ui:VisualElement name="bottom-bar">
+
+                <ui:Button name="navMapa">
+                    <ui:VisualElement class="scroller">
+                        <ui:Label name="lblMapa" text="Mapa" class="btn-text" />
+                    </ui:VisualElement>
+                </ui:Button>
+
+                <ui:Button name="navContactos">
+                    <ui:VisualElement class="scroller">
+                        <ui:Label name="lblContactos" text="Contactos" class="btn-text" />
+                    </ui:VisualElement>
+                </ui:Button>
+
+                <ui:Button name="navRegistro">
+                    <ui:VisualElement class="scroller">
+                        <ui:Label name="lblRegistro" text="Registro" class="btn-text" />
+                    </ui:VisualElement>
+                </ui:Button>
+
+                <ui:Button name="navSettings">
+                    <ui:VisualElement class="scroller">
+                        <ui:Label name="lblSettings" text="Settings" class="btn-text" />
+                    </ui:VisualElement>
+                </ui:Button>
+
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>
